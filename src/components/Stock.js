@@ -1,10 +1,14 @@
 import React from "react";
 
-function Stock({ stock }) {
-  // console.log(stocks)
+function Stock({ stock, addToPortfolio }) {
+
+  function handleClick() {
+    addToPortfolio(stock)
+  }
+
   return (
     <div>
-      <div className="card">
+      <div className="card" onClick={handleClick}>
         <div className="card-body">
           <h5 className="card-title">{stock.name}</h5>
           <p className="card-text">{stock.price}</p>
